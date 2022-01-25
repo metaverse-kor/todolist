@@ -12,14 +12,14 @@ const OPTION = [
 
 const SelectBox= () => {
     const [inputValue, setInputValue] = useState('');
-    let inputRef = false;
+    const inputRef = React.useRef(false)
+
     const changeSelectOptionHandler = (e) => {
         console.log(e.target.value);
         setInputValue(e.target.value);
         if(e.target.value!==""){
-            console.log('들어옴')
-            inputRef = true;
-            console.log('inputRef =' +inputRef)
+            console.log("true 들어옴")
+            inputRef.current=true
         }
     };
 
