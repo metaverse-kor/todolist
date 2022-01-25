@@ -2,12 +2,12 @@ import React from "react";
 
 const Radio = () => {
   return (
-    <div>
-      <div>내용</div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-  </div>
+      <select >
+          <option value="000">직접입력</option>
+          <option value="001">naver.com</option>
+          <option value="002">daum.net</option>
+      </select>
+
   )
 }
 
