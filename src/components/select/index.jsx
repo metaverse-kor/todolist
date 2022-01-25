@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const OPTION = [
     { value: "", name: "직접입력" },
@@ -9,11 +9,17 @@ const OPTION = [
 
 
 const SelectBox= () => {
+    const [inputValue, setInputValue] = useState('');
+
     const changeSelectOptionHandler = (e) => {
         console.log(e.target.value);
+        setInputValue(e.target.value);
     };
 
     return (
+      <>
+      <input type="text" value={inputValue} onChange={changeSelectOptionHandler}/>
+
       <select onChange={changeSelectOptionHandler} >
           {OPTION.map((option) => (
               <option key={option.value} value={option.value}>
@@ -21,6 +27,7 @@ const SelectBox= () => {
               </option>
           ))}
       </select>
+      </>
   )
 }
 
